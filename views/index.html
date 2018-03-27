@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+ <head> 
+<meta charset="UTF-8"> 
+<meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+ <title>Document</title> 
+<link rel="stylesheet" href="/css/bootstrap.min.css">
+</head>
+ <body>
+ <div class="container">
+     <div>
+         欢迎 <%=uname%>登陆  <a href="/logout">退出</a>
+     </div>
+      <table class="table table-bordered">
+       <tr>
+        <th>id</th>
+        <th>姓名</th>
+        <th>年龄</th>
+        <th>性别</th>
+        <th>成绩</th>
+        <th>操作</th>
+       </tr>
+
+       <%for(var i=0;i<result.length;i++){%>
+         <tr>
+            <td> <%=result[i].id%></td>
+            <td> <%=result[i].name%></td>
+            <td> <%=result[i].age%></td>
+            <td> <%=result[i].sex%></td>
+            <td> <%=result[i].score%></td>
+            <td>
+                <a href="/edit/<%=result[i].id%>"> 编辑 </a>
+                <a href="/del/<%=result[i].id%>"> 删除 </a>
+
+            </td>
+         </tr>
+       <%}%>
+      </table>
+ </div>
+ <script src="/js/index.js"></script>
+</body> 
+</html>
